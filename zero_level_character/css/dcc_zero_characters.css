@@ -1,0 +1,387 @@
+/*Mutant Crawl Classics Zero Level Character Sheet version 3*/
+
+body{
+	font-family: sans-serif;
+	font-size: 0.9em;
+	font-weight: bold;
+}
+
+#character_sheet{
+    width: 1000px;
+    height: auto;
+	display: block;
+}
+
+#topleft{
+	position:absolute;
+	top: 0px;
+	left: 0px;
+	width: 500px;
+	height: 647px;
+}
+
+#topright{
+	position:absolute;
+	top: 0px;
+	left: 500px;
+	width: 500px;
+	height: 647px;
+}
+
+#bottomleft{
+	position:absolute;
+	top: 647px;
+	left: 0px;
+	width: 500px;
+	height: 647px;
+}
+
+#bottomright{
+	position:absolute;
+	top: 647px;
+	left: 500px;
+	width: 500px;
+	height: 647px;
+}
+
+
+/*
+Character 1
+*/
+
+#name0, #name1, #name2, #name3{
+    position: absolute;
+    top: 55px;
+    left: 30px;
+}
+
+
+#profession0, #profession1, #profession2, #profession3{
+    position: absolute;
+    top: 55px;
+    left: 210px;
+}
+
+
+#sex0, #sex1, #sex2, #sex3{
+    position: absolute;
+    top: 55px;
+    left: 145px;
+}
+
+
+#languages0, #languages1, #languages2, #languages3{
+    position: absolute;
+    top: 590px;
+    left: 40px;
+    font-size: 0.75em;
+}
+
+
+
+#strength0, #strength1, #strength2, #strength3{
+    position:absolute;
+    top: 162px;
+    left: 130px;
+	font-size: 1.5em;
+}
+
+#strengthMod0, #strengthMod1, #strengthMod2, #strengthMod3{
+    position:absolute;
+    top: 162px;
+    left: 170px;
+	font-size: 1.5em;
+}
+
+#agility0, #agility1, #agility2, #agility3{
+    position:absolute;
+    top: 190px;
+    left: 130px;
+	font-size: 1.5em;
+}
+
+#agilityMod0, #agilityMod1, #agilityMod2, #agilityMod3{
+    position:absolute;
+    top: 190px;
+    left: 170px;
+	font-size: 1.5em;
+}
+
+#stamina0, #stamina1, #stamina2, #stamina3{
+    position:absolute;
+    top: 218px;
+    left: 130px;
+	font-size: 1.5em;
+}
+
+#staminaMod0, #staminaMod1, #staminaMod2, #staminaMod3{
+    position:absolute;
+    top: 218px;
+    left: 170px;
+	font-size: 1.5em;
+}
+
+#personality0, #personality1, #personality2, #personality3{
+    position:absolute;
+    top: 246px;
+    left: 130px;
+	font-size: 1.5em;
+}
+
+#personalityMod0, #personalityMod1, #personalityMod2, #personalityMod3{
+    position:absolute;
+    top: 246px;
+    left: 170px;
+	font-size: 1.5em;
+}
+
+#intelligence0, #intelligence1, #intelligence2, #intelligence3{
+    position:absolute;
+    top: 274px;
+    left: 130px;
+	font-size: 1.5em;
+}
+
+#intelligenceMod0, #intelligenceMod1, #intelligenceMod2, #intelligenceMod3{
+    position:absolute;
+    top: 274px;
+    left: 170px;
+	font-size: 1.5em;
+}
+
+
+
+#luck0, #luck1, #luck2, #luck3{
+    position:absolute;
+    top: 302px;
+    left: 130px;
+	font-size: 1.5em;
+}
+
+#luckMod0, #luckMod1, #luckMod2, #luckMod3{
+    position:absolute;
+    top: 302px;
+    left: 170px;
+	font-size: 1.5em;
+}
+
+
+#birthAugur0, #birthAugur1, #birthAugur2, #birthAugur3{
+    position: absolute;
+    top: 100px;
+    left:  275px;
+	width: 135px;
+    font-size: 0.8em;
+}
+
+
+
+
+#baseAC0, #baseAC1, #baseAC2, #baseAC3{
+	position: absolute;
+    top: 114px;
+    left: 80px;
+	font-size: 1.5em;
+}
+
+
+#modifiedAC0, #modifiedAC1, #modifiedAC2, #modifiedAC3{
+	position: absolute;
+    top: 112px;
+    left: 35px;
+	font-size: 1.5em;
+}
+
+
+#hitPoints0, #hitPoints1, #hitPoints2, #hitPoints3{
+	position: absolute;
+    top: 112px;
+    left: 185px;
+	font-size: 1.5em;
+}
+
+
+#ref0, #ref1, #ref2, #ref3{
+    position: absolute;
+    top: 350px;
+    left:  190px;
+	font-size: 1.4em;
+}
+
+#fort0, #fort1, #fort2, #fort3{
+    position: absolute;
+    top: 378px;
+    left:  190px;
+	font-size: 1.4em;
+}
+
+#will0, #will1, #will2, #will3{
+    position: absolute;
+    top: 406px;
+    left:  190px;
+	font-size: 1.4em;
+}
+
+
+
+#actionDice0, #actionDice1, #actionDice2, #actionDice3{
+    position: absolute;
+    top: 540px;
+    left: 98px;
+	font-size: 1em;
+}
+
+#melee0, #melee1, #melee2, #melee3{
+    position: absolute;
+    top: 350px;
+    left: 95px;
+	font-size: 1.3em;
+}
+
+
+#range0, #range1, #range2, #range3{
+    position: absolute;
+    top: 373px;
+    left: 95px;
+	font-size: 1.3em;
+}
+
+#init0, #init1, #init2, #init3{
+    position: absolute;
+    top: 397px;
+    left: 95px;
+	font-size: 1.3em;
+}
+
+
+#speed0, #speed1, #speed2, #speed3{
+    position: absolute;
+    top: 421px;
+    left: 95px;
+	font-size: 1.3em;
+}
+
+#meleeDamage0, #meleeDamage1, #meleeDamage2, #meleeDamage3{
+    position: absolute;
+    top: 362px;
+    left: 140px;
+	font-size: 1.3em;
+}
+
+
+#rangeDamage0, #rangeDamage1, #rangeDamage2, #rangeDamage3{
+    position: absolute;
+    top: 385px;
+    left: 140px;
+	font-size: 1.3em;
+}
+
+
+
+#critDie0, #critDie1, #critDie2, #critDie3{
+    position: absolute;
+    top: 415px;
+    left: 300px;
+	font-size: 1em;
+}
+
+#critTable0, #critTable1, #critTable2, #critTable3{
+    position: absolute;
+    top: 408px;
+    left: 263px;
+	font-family: serif;
+	font-size: 1.5em;
+}
+
+
+
+
+
+#fumbleDie0, #fumbleDie1, #fumbleDie2, #fumbleDie3{
+    position: absolute;
+    top: 415px;
+    left: 365px;
+	font-size: 1em;
+}
+
+
+#physicalDescription0, #physicalDescription1, #physicalDescription2, #physicalDescription3{
+    position: absolute;
+    top: 358px;
+    left:  325px;
+    width: 140px;
+    font-size: 0.85em;
+}
+
+
+#weapons0, #weapons1, #weapons2, #weapons3{
+    position: absolute;
+    top: 195px;
+    left:  255px;
+	font-size: 0.9em;
+    width: 150px;
+}
+
+#weaponDamage0, #weaponDamage1, #weaponDamage2, #weaponDamage3{
+    position: absolute;
+    top: 195px;
+    left:  435px;
+	font-size: 0.9em;
+}
+
+
+#armour0, #armour1, #armour2, #armour3{
+    position: absolute;
+    top: 235px;
+    left:  255px;
+	font-size: 0.9em;
+    width: 150px;
+}
+
+#acBonus0, #acBonus1, #acBonus2, #acBonus3{
+    position: absolute;
+    top: 185px;
+    left:  385px;
+	font-size: 0.8em;
+}
+
+#armourFumble0, #armourFumble1, #armourFumble2, #armourFumble3{
+    position: absolute;
+    top: 185px;
+    left:  432px;
+	font-size: 0.8em;
+}
+
+
+#equipment0, #equipment1, #equipment2, #equipment3{
+    position: absolute;
+    top: 273px;
+    left:  255px;
+	font-size: 0.9em;
+}
+
+
+
+#tradeGood0, #tradeGood1, #tradeGood2, #tradeGood3{
+    position: absolute;
+    top: 288px;
+    left:  255px;
+	font-size: 0.9em;
+}
+
+
+#dieRollMethod0, #dieRollMethod1, #dieRollMethod2, #dieRollMethod3{
+    position: absolute;
+    top: 605px;
+    left:  50px;
+	font-size: 0.6em;
+}
+
+
+#animalCharacter0, #animalCharacter1, #animalCharacter2, #animalCharacter3{
+    position: absolute;
+    top: 500px;
+    left:  35px;
+	width: 370px;
+	font-size: 0.7em;
+}
