@@ -137,139 +137,26 @@ function getArmourProtection (armour) {
 }
 
 
-      
-      /*getArmour() returns the name of armour type
-      */
-/*      function getArmour(item){
-          let armour = "";
-          
-          if(item.id === 1){
-              armour = "Fur cloak";
-          }
-          else if(item.id === 2){
-              armour = "Hide armour";
-          }
-          else if(item.id === 3){
-              armour = "Leather shield";
-          }
-          else if(item.id === 4){
-              armour = "Antler hood";
-          }
-          return armour;
-      }
-   */
-      /*getArmourACBonus()
-      */
-   /*   function getArmourACBonus(item){
-          let acBonus = 0;
-          
-          if(item.id === 1){
-              acBonus = 2;
-          }
-          else if(item.id === 2){
-              acBonus = 3;
-          }
-          else if(item.id === 3 || item.id === 4){
-              acBonus = 1;
-          }
-          return acBonus;
-      }
-*/         
-      
-      /*getArmourACBonusString()
-      */
-      function getArmourACBonusString(item){
-          let acBonus = "";
-          
-          if(item.id === 1){
-              acBonus = "+2";
-          }
-          else if(item.id === 2){
-              acBonus = "+3";
-          }
-          else if(item.id === 3 || item.id === 4){
-              acBonus = "+1";
-          }
-          return acBonus;
-      }
- 
-            
-      /*getFumble()
-      */
-      function getFumble(item){
-          let fumble = "";
-          
-          if(item.id === 1){
-              fumble = "d8";
-          }
-          else if(item.id === 2){
-              fumble = "d12";
-          }
-          else if(item.id === 3 || item.id === 4){
-              fumble = "d8";
-          }
-          return fumble;
-      }
-      
-                  
-      /*getFumbleDie()
-      */
-      function getFumbleDie(item){
-          let fumbleDie = "d4";
-          
-          if(item.id === 1){
-              fumbleDie = "d8";
-          }
-          else if(item.id === 2){
-              fumbleDie = "d12";
-          }
-          else if(item.id === 3 || item.id === 4){
-              fumbleDie = "d8";
-          }
-          return fumbleDie;
-      }
-      
-
-
-
-/* getMaxTechLevel() gets the maximum tech level based on Intelligence
+	  
+/*
+getFumbleDie (armour) - returns the fumble die type based on the armour the character is wearing
 */
-    
-      function getMaxTechLevel(intelligence) {
-          let techLevel = 0;
-          
-          if(intelligence >= 3 && intelligence <=7)
-              {
-                  techLevel = 1;
-              }
-          else if(intelligence >= 8 && intelligence <=9)
-              {
-                  techLevel = 2;
-              }
-          else if(intelligence >= 10 && intelligence <=11)
-              {
-                  techLevel = 3;
-              }
-          else if(intelligence >= 12 && intelligence <=14)
-              {
-                  techLevel = 4;
-              }
-          else if(intelligence >= 15 && intelligence <=17)
-              {
-                  techLevel = 5;
-              }
-          else if(intelligence >= 18 && intelligence <=23)
-              {
-                  techLevel = 6;
-              }
-          else{
-                techLevel = 7;
-          }
-          
-          return techLevel;
-      }
-      
-      
+function getFumbleDie (armour) {
+	var fumbleDie = "d4"; 
+	if (armour === "Leather" || armour === "Shield") {
+		fumbleDie = "d8"; 
+	}
+	else if (armour === "Hide") {
+		fumbleDie = "d12"; 
+	}
+	return fumbleDie;
+}
+	
+ 
+
+
+
+
 	 	
 /*
 hitPointAdjustPerLevel (luckySign, luckModifier) - returns the additional/minus hit points
@@ -278,7 +165,7 @@ the character received per level from their Stamina modifier and whether they ha
 	  
 function hitPointAdjustPerLevel (luckySign, luckModifier) {
    let adjust = 0;
-    if (luckySign != undefined && luckySign.luckySign === "The Ecobot"){
+    if (luckySign != undefined && luckySign.luckySign === "Bountiful Harvest"){
         adjust = luckModifier;
      }
 	return adjust;
@@ -308,16 +195,15 @@ function addModifierSign (modifier) {
 }
 	  
 
-
 /*
 meleeAdjust (luckySign, luckModifier) - adds bonus/penality to Melee attack based on whether the character possesses specific Lucky Signs
 */
 function meleeAdjust (luckySign, luckModifier) {
-   let adjust = 0;
-    if (luckySign.luckySign != undefined && luckySign.luckySign === "Nuclear Winter"){
+   var adjust = 0;
+    if (luckySign.luckySign != undefined && luckySign.luckySign === "Harsh winter"){
         adjust = luckModifier;
      }
-	else if (luckySign.luckySign != undefined && luckySign.luckySign === "The Roxen") {
+	else if (luckySign.luckySign != undefined && luckySign.luckySign === "The bull") {
 		adjust = luckModifier;
 	}
 	return adjust;
@@ -327,8 +213,8 @@ function meleeAdjust (luckySign, luckModifier) {
 rangeAdjust (luckySign, luckModifier) - adds bonus/penality to Range attack based on whether the character possesses specific Lucky Signs
 */	  
 function rangeAdjust (luckySign, luckModifier) {
-   let adjust = 0;
-    if (luckySign.luckySign != undefined && (luckySign.luckySign === "Nuclear Winter" || luckySign.luckySign === "The Triffid")){
+   var adjust = 0;
+    if (luckySign.luckySign != undefined && (luckySign.luckySign === "Harsh winter" || luckySign.luckySign === "Fortunate date")){
         adjust = luckModifier;
      }
 	return adjust;
@@ -388,6 +274,22 @@ function addAnimal (occupations) {
 	return animal;
 }
 
+	  
+/*
+addCartContents() - returns Randomly selected pushcart contents for the Wainwright Occupation
+*/
+function addCartContents() {
+	var cartContents = [	  
+		{"contents": "Push Cart containing tomatoes"},
+		{"contents": "Push Cart containing nothing"},
+		{"contents": "Push Cart containing dirt"},
+		{"contents": "Push Cart containing straw"},
+		{"contents": "Push Cart containing rocks"},
+		{"contents": "Push Cart containing YOUR DEAD!!!"}
+	];
+    return cartContents[Math.floor(Math.random() * 6)]; 
+}
+
 /*
 hasFarmAnimal (occupations) calls getRandomFarmAnimal() if the Occupation is Farmer
 */
@@ -397,6 +299,21 @@ function hasFarmAnimal (occupations) {
 		farmAnimal = getRandomFarmAnimal().animal;
 	}
 	return farmAnimal;
+}
+/*
+getRandomFarmAnimal() returns a randomly generated farm animal for those with the farmer occupation
+*/
+function getRandomFarmAnimal(){
+	var farmAnimal = [
+		{"animal": "Hen: Init +2; Atk peck +0 melee (1): AC 11; HP 1; MV 30'; Act 1d20; SV Fort -2, Ref +2, Will +0; AL N"},
+		{"animal": "Sheep: Init +0; Atk ram +0 melee (1d2): AC 12; HP  "+  Math.floor((Math.random() * 6) + 1) + "; HD 1d6; MV 30'; Act 1d20; SV Fort +0, Ref +1, Will +0; AL N"},
+		{"animal": "Goat: Init +1; Atk ram +0 melee (1d3): AC 12; HP   "+  Math.floor((Math.random() * 6) + 1) + "; HD 1d6; MV 30'; Act 1d20; SV Fort +3, Ref +1, Will +2; AL N"},
+		{"animal": "Cow: Init -2; Atk ram +0 melee (1d4): AC 11; HP  "+  Math.floor((Math.random() * 15) + 3) + "; HD 2d8; MV 30'; Act 1d20; SV Fort +1, Ref -2, Will -2; AL N"},
+		{"animal": "Duck: Init +1; Atk bite -3 melee (1): AC 11; HP 1; MV 20', fly 30'; Act 1d20; SV Fort +0, Ref +1, Will -2; AL N"},
+		{"animal": "Goose: Init +0; Atk bite -2 melee (1): AC 11; HP 1; MV 20', fly 30'; Act 1d20; SV Fort +0, Ref +1, Will -2; AL N"},
+		{"animal": "Mule: Init -1; Atk bite -1 melee (1d2): AC 11; HP  "+  Math.floor((Math.random() * 15) + 3) + "; HD 2d8; MV 30'; Act 1d20; SV Fort +4, Ref +2, Will +2; AL N"}
+	  ];
+     return farmAnimal[Math.floor(Math.random() * 7)]; 
 }
 
 /*
@@ -515,10 +432,10 @@ meleeDamageAdjust (luckySign, luckModifier) - adds bonus/penality to Melee attac
 */
 function meleeDamageAdjust (luckySign, luckModifier) {
    let adjust = 0;
-    if (luckySign.luckySign != undefined && luckySign.luckySign === "The Apocalypse"){
+    if (luckySign.luckySign != undefined && luckySign.luckySign === "Born on the battlefield"){
         adjust = luckModifier;
      }
-	else if (luckySign.luckySign != undefined && luckySign.luckySign === "Ragnarok") {
+	else if (luckySign.luckySign != undefined && luckySign.luckySign === "Path of the bear") {
 		adjust = luckModifier;
 	}
 	return adjust;
@@ -530,13 +447,47 @@ rangeDamageAdjust (luckySign, luckModifier) - adds bonus/penality to Melee attac
 */
 function rangeDamageAdjust (luckySign, luckModifier) {
    let adjust = 0;
-    if (luckySign.luckySign != undefined && luckySign.luckySign === "The Apocalypse"){
+    if (luckySign.luckySign != undefined && luckySign.luckySign === "Born on the battlefield"){
         adjust = luckModifier;
      }
-	else if (luckySign.luckySign != undefined && luckySign.luckySign === "Revelations") {
+	else if (luckySign.luckySign != undefined && luckySign.luckySign === "Hawkeye") {
 		adjust = luckModifier;
 	}
 	return adjust;
+}
+
+//select weapon damage type
+function damageAdjustSelect (occupation, meleeDamage, rangeDamage)
+{
+    let damageBonus = meleeDamage;
+    
+    if(occupation.trainedWeapon == "Quill (as Dart)")
+        {
+            
+            damageBonus = rangeDamage;
+        }
+    else if(occupation.trainedWeapon === "Bow")
+        {
+            
+            damageBonus = rangeDamage;
+        }
+    else if(occupation.trainedWeapon === "Sling")
+        {
+            
+            damageBonus = rangeDamage;
+        }
+    else if(occupation.trainedWeapon === "Short Bow")
+        {
+            
+            damageBonus = rangeDamage;
+        }
+    else if(occupation.trainedWeapon == "Dart")
+        {
+            
+            damageBonus = rangeDamage;
+        }
+    
+    return damageBonus;
 }
 
 /*

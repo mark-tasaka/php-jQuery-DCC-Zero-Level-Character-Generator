@@ -21,9 +21,13 @@ function getSex ($characterSex)
     {
         return 'Female';
     }
+    else if($characterSex == 3)
+    {
+        return 'Male';
+    }
     else
     {
-        return '???';
+        return '';
     }
     
 }

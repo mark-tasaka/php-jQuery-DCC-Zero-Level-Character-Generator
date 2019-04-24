@@ -63,6 +63,13 @@ Character 1
 }
 
 
+#alignment0, #alignment1, #alignment2, #alignment3{
+    position: absolute;
+    top: 55px;
+    left: 417px;
+}
+
+
 #sex0, #sex1, #sex2, #sex3{
     position: absolute;
     top: 55px;
@@ -72,9 +79,9 @@ Character 1
 
 #languages0, #languages1, #languages2, #languages3{
     position: absolute;
-    top: 590px;
-    left: 40px;
-    font-size: 0.75em;
+    top: 478px;
+    left: 36px;
+    font-size: 0.7em;
 }
 
 
@@ -174,6 +181,12 @@ Character 1
     font-size: 0.8em;
 }
 
+#wealth0, #wealth1, #wealth2, #wealth3{
+    position: absolute;
+    top: 115px;
+    left:  445px;
+    font-size: 0.8em;
+}
 
 
 
@@ -325,7 +338,7 @@ Character 1
 #weaponDamage0, #weaponDamage1, #weaponDamage2, #weaponDamage3{
     position: absolute;
     top: 195px;
-    left:  435px;
+    left:  448px;
 	font-size: 0.9em;
 }
 
@@ -380,8 +393,18 @@ Character 1
 
 #animalCharacter0, #animalCharacter1, #animalCharacter2, #animalCharacter3{
     position: absolute;
-    top: 500px;
+    top: 503px;
     left:  35px;
-	width: 370px;
+	width: 420px;
+	font-size: 0.7em;
+}
+
+
+
+#raceAbility0, #raceAbility1, #raceAbility2, #raceAbility3{
+    position: absolute;
+    top: 493px;
+    left:  35px;
+	width: 420px;
 	font-size: 0.7em;
 }

@@ -113,17 +113,17 @@ function getOccupation(){
 		// Humans 92 -  Wainwright
 		{"occupation": "Wainwright", "race": "Human", "trainedWeapon": "Club", "damage": "1d4", "tradeGoods": "Push Cart (see notes)"},
 		{"occupation": "Weaver", "race": "Human", "trainedWeapon": "Dagger", "damage": "1d4", "tradeGoods": "Fine Suit of Clothes"},
-		{"occupation": "Wizards Apprentice", "race": "Human", "trainedWeapon": "Dagger", "damage": "1d4", "tradeGoods": "Black Grimoire"},
+		{"occupation": "Wizard's Apprentice", "race": "Human", "trainedWeapon": "Dagger", "damage": "1d4", "tradeGoods": "Black Grimoire"},
 		{"occupation": "Woodcutter", "race": "Human", "trainedWeapon": "Hand Axe", "damage": "1d6", "tradeGoods": "Bundle of Wood"},
 		{"occupation": "Woodmonger", "race": "Human", "trainedWeapon": "Hand Axe", "damage": "1d6", "tradeGoods": "Bundle of Wood"},
 		{"occupation": "Wood Seller", "race": "Human", "trainedWeapon": "Hand Axe", "damage": "1d6", "tradeGoods": "Bundle of Wood"},
 		// Humans 97 - 99: Mercenary to 
-		{"occupation": "Mercenary", "race": "Human", "trainedWeapon": "Longsword", "damage": "1d8", "tradeGoods": "Hide Armour (see Armour)"},
-		{"occupation": "Outlaw", "race": "Human", "trainedWeapon": "Short Sword", "damage": "1d6", "tradeGoods": "Leather Armour (see Armour)"},
-		{"occupation": "Soldier", "race": "Human", "trainedWeapon": "Spear", "damage": "1d8", "tradeGoods": "Shield (see Armour)"}
+		{"occupation": "Mercenary", "race": "Human", "trainedWeapon": "Longsword", "damage": "1d8", "tradeGoods": ""},
+		{"occupation": "Outlaw", "race": "Human", "trainedWeapon": "Short Sword", "damage": "1d6", "tradeGoods": ""},
+		{"occupation": "Soldier", "race": "Human", "trainedWeapon": "Spear", "damage": "1d8", "tradeGoods": ""}
 		];
 	
-		//return occupations[Math.floor(Math.random() * occupations.length)]; 
-    return occupations[4];
+		return occupations[Math.floor(Math.random() * occupations.length)]; 
+   // return occupations[82];
 		
 }

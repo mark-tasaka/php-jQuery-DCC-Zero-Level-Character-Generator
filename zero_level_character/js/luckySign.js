@@ -16,7 +16,7 @@ function getLuckySign(){
         {"luckySign": "Born on the battlefield", "luckyRoll": "Damage rolls"},
         {"luckySign": "Path of the bear", "luckyRoll": "Melee damage rolls"},
         {"luckySign": "Hawkeye", "luckyRoll": "Missle damage rolls"},
-        {"luckySign": "Pack hunter", "luckyRoll": "Attack and damage rolls for 0-level starting weapon"},
+        {"luckySign": "Pack hunter", "luckyRoll": "Attack & damage rolls for 0-level starting weapon"},
         {"luckySign": "Born under the loom", "luckyRoll": "Skill checks"},
         {"luckySign": "Fox's cunning", "luckyRoll": "Find/disable traps"},
         {"luckySign": "Four-leafed clover", "luckyRoll": "Find secret doors"},

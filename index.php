@@ -12,6 +12,7 @@
     
 	<link rel="stylesheet" href="css/githubMCC.css"/> 
 	<link rel="stylesheet" href="css/mcc_additions.css"/> 
+	<link rel="stylesheet" href="css/general.css"/> 
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta charset="utf-8" />
@@ -45,43 +46,38 @@
 	<form action="" id ="zeroCharForm"  target="_blank" method="post">
             
 
-            <div class="content9">
+            <div class="content1b">
   
 
                 
                     
-                <span class="formIputDescription">Name:</span>	
-			  <select id="characterName" name="theCharacterName" class="alignmentBox">	
-				<option value="0" selected>Random Names</option>
+                <span class="formIputDescription1b">Name:</span>	
+			  <select id="characterName" name="theCharacterName" class="">	
+				<option value="0" selected>Random</option>
 				<option value="1">No Names</option>
 			  </select>
-                
-                
-            <br/>
-            <br/>
+    
                             
-                <span class="formIputDescription">Ability Scores:</span>	
-			  <select id="abilityScores" name="theAbilityScore" class="alignmentBox">	
-				<option value="1" selected>3d6 (Old School)</option>
-				<option value="2">4d6, drop the lowest</option>
-			  </select>
-            
-                
-            <br/>
-            <br/>
-                            
-                <span class="formIputDescription">Sex:</span>	
-			  <select id="sex" name="theSex" class="alignmentBox">	
+                <span class="formIputDescription1b">Sex:</span>	
+			  <select id="sex" name="theSex" class="">	
 				<option value="1" selected>Random</option>
 				<option value="2">Female</option>
 				<option value="3">Male</option>
+				<option value="4">Blank</option>
 			  </select>
-            
+
                 
-            <br/>
-            <br/>
-                
-        </div>
+                            
+                <span class="formIputDescription1b">Alignment:</span>	
+			  <select id="alignment" name="theAlignment" class="">	
+				<option value="1" selected>Random</option>
+				<option value="2">Lawful</option>
+				<option value="3">Neutral</option>
+				<option value="4">Chaotic</option>
+				<option value="5">Blank</option>
+			  </select>
+
+        
 
 			<div class="generatorb">
 			<span class="generatorbuttons">
@@ -95,10 +91,10 @@
 				</span>
                 
 				</div>
-		<p><span class="footnote">&#42;Rolling 4d6, and dropping the lowest die.</span></p>
    
-        
+        </div>
 				</form>
+        
                 <br/>
                 
             

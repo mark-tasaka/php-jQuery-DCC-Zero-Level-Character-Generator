@@ -29,6 +29,7 @@
     
     include 'php/characterSex.php';
     include 'php/characterName.php';
+    include 'php/alignment.php';
     
         
         if(isset($_POST["theSex"]))
@@ -53,6 +54,17 @@
             $nameOption = $_POST["theCharacterName"];
     
         }
+    
+            
+        if(isset($_POST["theAlignment"]))
+        {
+            $alignOption = $_POST["theAlignment"];
+        }
+    
+        $characterAlignment0 = getAlignment($alignOption);
+        $characterAlignment1 = getAlignment($alignOption);
+        $characterAlignment2 = getAlignment($alignOption);
+        $characterAlignment3 = getAlignment($alignOption);
     
     
     ?>
@@ -119,13 +131,19 @@
            </span>
            
            
+        <span id="alignment0">
+           <?php
+            
+            echo $characterAlignment0;
+            
+            ?>
+           </span>
+           
+           
 		<span id="critDie0"></span>
 		<span id="critTable0"></span>
            
-        <span id="actionDice0">1d20</span>
-           
-           <span id="artifactCheck0"></span>
-           <span id="maxTech0"></span>
+           <span id="wealth0"></span>
            
            <span id="languages0"><span id="baseLanguage0"></span><span id="addLanguages0"></span></span>
 		 
@@ -147,6 +165,9 @@
 		   <span id="dieRollMethod0"></span>
            
 		<p id="animalCharacter0"><span id="animal0"></span><span id="farmAnimal0"></span></p>
+           
+           <span id="raceAbility0"></span>
+           <span id="damageBonus0"></span>
            	   
 		</aside>
 
@@ -203,13 +224,19 @@
             ?>
            </span>
            
+        <span id="alignment1">
+           <?php
+            
+            echo $characterAlignment1;
+            
+            ?>
+           </span>
+           
 		<span id="critDie1"></span>
 		<span id="critTable1"></span>
            
-        <span id="actionDice1">1d20</span>
-           
-           <span id="artifactCheck1"></span>
-           <span id="maxTech1"></span>
+                      
+           <span id="wealth1"></span>
            
            <span id="languages1"><span id="baseLanguage1"></span><span id="addLanguages1"></span></span>
 		 
@@ -230,6 +257,9 @@
 		   <span id="dieRollMethod1"></span>
            
 		<p id="animalCharacter1"><span id="animal1"></span><span id="farmAnimal1"></span></p>
+            <span id="raceAbility1"></span>
+           
+           <span id="damageBonus1"></span>
            	   
 		</aside>
 	    
@@ -288,13 +318,19 @@
             ?>
            </span>
            
+        <span id="alignment2">
+           <?php
+            
+            echo $characterAlignment2;
+            
+            ?>
+           </span>
+           
 		<span id="critDie2"></span>
 		<span id="critTable2"></span>
            
-        <span id="actionDice2">1d20</span>
-           
-           <span id="artifactCheck2"></span>
-           <span id="maxTech2"></span>
+                      
+           <span id="wealth2"></span>
            
            <span id="languages2"><span id="baseLanguage2"></span><span id="addLanguages2"></span></span>
 		 
@@ -315,6 +351,9 @@
 		   <span id="dieRollMethod2"></span>
            
 		<p id="animalCharacter2"><span id="animal2"></span><span id="farmAnimal2"></span></p>
+           
+            <span id="raceAbility2"></span>
+           <span id="damageBonus2"></span>
            	   
 		</aside>
        
@@ -371,13 +410,19 @@
             ?>
            </span>
            
+           
+        <span id="alignment3">
+           <?php
+            
+            echo $characterAlignment3;
+            
+            ?>
+           </span>
+           
 		<span id="critDie3"></span>
 		<span id="critTable3"></span>
-           
-        <span id="actionDice3">1d20</span>
-           
-           <span id="artifactCheck3"></span>
-           <span id="maxTech3"></span>
+                      
+           <span id="wealth3"></span>
            
            <span id="languages3"><span id="baseLanguage3"></span><span id="addLanguages3"></span></span>
 		 
@@ -398,6 +443,9 @@
 		   <span id="dieRollMethod3"></span>
            
 		<p id="animalCharacter3"><span id="animal3"></span><span id="farmAnimal3"></span></p>
+           
+            <span id="raceAbility3"></span>
+           <span id="damageBonus3"></span>
            	   
 		</aside>
        
@@ -484,9 +532,6 @@
     let bonusLanguages = getBonusLanguages(intelligenceModifier, birthAugur);
     let randomItem = getStartingEquipment();
     let armour = getArmour(profession);
-    let armourClassBonus = getArmourACBonusString(randomItem);
-    let fumble = getFumble(randomItem);
-    let fumbleDie = getFumbleDie(randomItem);
 	let baseAC = getBaseArmourClass(agilityModifier)  + adjustAC(birthAugur, getLuckModifier(luck));
     let acBonus = getArmourProtection(armour);
 		
@@ -514,9 +559,7 @@
 			"will": personalityModifier + adjustWill(birthAugur, getLuckModifier(luck)),
 			"init": agilityModifier + adjustInit(birthAugur, getLuckModifier(luck)),
 			"melee": strengthModifier + meleeAdjust(birthAugur, getLuckModifier(luck)),
-           // "meleeDamage": strengthModifier + meleeDamageAdjust(birthAugur, getLuckModifier(luck)),
 			"range": agilityModifier + rangeAdjust(birthAugur, getLuckModifier(luck)),
-			//"rangeDamage": rangeDamageAdjust(birthAugur, getLuckModifier(luck)),
 			"critDie": "d4" + addSign(adjustCrit(birthAugur, getLuckModifier(luck))),
 			"critTable": "I",
             "baseLanguage": 'Language(s): ' + language,
@@ -525,18 +568,15 @@
             "professionWeapon": profession.trainedWeapon,
             "professionWeaponDam": profession.damage,
             "startingItem": randomItem.equipment,
-           // "randomWeapon": randomWeapon.weapon,
-        //    "randomWeaponDam": randomWeapon.damage,
+			"fumbleDie": getFumbleDie (armour) + "" + addSign(adjustFumble(birthAugur, getLuckModifier(luck))),
             "armour": armour,
-            "acBonus": armourClassBonus,
-            "armourFumble": fumble,
-            "fumbleDie": fumbleDie + addSign(adjustFumble (birthAugur, getLuckModifier(luck))),
+            "raceTrait": addRaceAbilities(profession),
             "acNoArmoured": baseArmourClass,
             "acWithArmour": baseArmourClass + acBonus,
             "tradeGoods": profession.tradeGoods,
 			"animal": addAnimal (profession),
 			"farmAnimal": hasFarmAnimal (profession),
-			"dieRollMethod": "Generation methods: ability scores: 3d6; random hp; random name"
+			"wealth": Math.floor((Math.random() * 12)) + Math.floor((Math.random() * 12)) + Math.floor((Math.random() * 12)) + Math.floor((Math.random() * 12)) + Math.floor((Math.random() * 12)) + 5 + " cp"
 			
 		
 			
@@ -736,7 +776,6 @@
 	  for(let index = 0; index < 4 ; index++){
 	  
          
-         // $("#name" + index).html(data[index].name);
           
           $("#profession" + index).html(data[index].profession);
           
@@ -776,8 +815,6 @@
           $("#init" + index).html(addModifierSign(data[index].init));
           $("#melee" + index).html(addModifierSign(data[index].melee));
           $("#range" + index).html(addModifierSign(data[index].range));
-        //  $("#meleeDamage" + index).html(addModifierSign(data[index].meleeDamage));
-        //  $("#rangeDamage" + index).html(addModifierSign(data[index].rangeDamage));
           
           $("#fumbleDie" + index).html(data[index].fumbleDie);
           
@@ -798,15 +835,19 @@
           $("#randomWeaponDamage" + index).html(data[index].randomWeaponDam);
           $("#armour" + index).html(data[index].armour);
           $("#acBonus" + index).html(data[index].acBonus);
-          $("#armourFumble" + index).html(data[index].armourFumble);
           
-          $("#dieRollMethod" + index).html(data[index].dieRollMethod);
           
 	  
 	    $("#animal" + index ).html(data[index].animal); 
           $("#farmAnimal" + index).html(data[index].farmAnimal);
           
           $("#tradeGood" + index).html(data[index].tradeGoods);
+          $("#raceAbility" + index).html(data[index].raceTrait);
+          $("#wealth" + index).html(data[index].wealth);
+          
+          
+
+
 	  
 	  }
 
