@@ -532,7 +532,7 @@
     let bonusLanguages = getBonusLanguages(intelligenceModifier, birthAugur);
     let randomItem = getStartingEquipment();
     let armour = getArmour(profession);
-	let baseAC = getBaseArmourClass(agilityModifier)  + adjustAC(birthAugur, getLuckModifier(luck));
+	let baseAC = getBaseArmourClass(agilityModifier)  + adjustAC(birthAugur, luckModifier);
     let acBonus = getArmourProtection(armour);
 		
 		let zeroLevelCharacter = {
@@ -571,8 +571,8 @@
 			"fumbleDie": getFumbleDie (armour) + "" + addSign(adjustFumble(birthAugur, getLuckModifier(luck))),
             "armour": armour,
             "raceTrait": addRaceAbilities(profession),
-            "acNoArmoured": baseArmourClass,
-            "acWithArmour": baseArmourClass + acBonus,
+            "acNoArmoured": baseAC,
+            "acWithArmour": baseAC + acBonus,
             "tradeGoods": profession.tradeGoods,
 			"animal": addAnimal (profession),
 			"farmAnimal": hasFarmAnimal (profession),

@@ -1,8 +1,4 @@
 
-
-/*	  
-getLuckySign() - returns a randomly generated Lucky Sign 
-*/
 /*	  
 getLuckySign() - returns a randomly generated Lucky Sign 
 */
@@ -40,5 +36,5 @@ function getLuckySign(){
         {"luckySign": "Wild child", "luckyRoll": "Speed"}
     ];
 	
-     return luckySign[Math.floor(Math.random() * 30)]; 
+    return luckySign[Math.floor(Math.random() * luckySign.length)]; 
 }
